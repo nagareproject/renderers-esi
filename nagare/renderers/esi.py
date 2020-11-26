@@ -37,8 +37,8 @@ class Renderer(xml.XmlRenderer):
     remove = TagProp('remove')
     vars = TagProp('vars')
 
-    def __init__(self, parent=None):
-        super(Renderer, self).__init__(parent)
+    def __init__(self, parent=None, *args, **kw):
+        super(Renderer, self).__init__(parent, *args, **kw)
 
         self.namespaces = {'esi': self.namespace}
         self.default_namespace = 'esi'
