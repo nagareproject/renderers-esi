@@ -1,5 +1,5 @@
 # --
-# Copyright (c) 2008-2022 Net-ng.
+# Copyright (c) 2008-2023 Net-ng.
 # All rights reserved.
 #
 # This software is licensed under the BSD License, as described in
@@ -13,7 +13,10 @@ from nagare.renderers.esi import Renderer
 
 def test_namespaces():
     e = Renderer()
-    assert e.try_(e.include).tostring() == b'<esi:try xmlns:esi="http://www.edge-delivery.org/esi/1.0"><esi:include/></esi:try>'
+    assert (
+        e.try_(e.include).tostring()
+        == b'<esi:try xmlns:esi="http://www.edge-delivery.org/esi/1.0"><esi:include/></esi:try>'
+    )
 
     e = Renderer()
     e.default_namespace = None
@@ -27,7 +30,10 @@ def test_namespaces():
     e = Renderer()
     x = xml.Renderer()
     root = x.content(x.section(e.try_(e.include)), x.section(e.try_(e.include)))
-    assert root.tostring() == b'<content><section><esi:try xmlns:esi="http://www.edge-delivery.org/esi/1.0"><esi:include/></esi:try></section><section><esi:try xmlns:esi="http://www.edge-delivery.org/esi/1.0"><esi:include/></esi:try></section></content>'
+    assert (
+        root.tostring()
+        == b'<content><section><esi:try xmlns:esi="http://www.edge-delivery.org/esi/1.0"><esi:include/></esi:try></section><section><esi:try xmlns:esi="http://www.edge-delivery.org/esi/1.0"><esi:include/></esi:try></section></content>'
+    )
 
 
 def test_escape():

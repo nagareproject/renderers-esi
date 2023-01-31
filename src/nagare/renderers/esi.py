@@ -1,5 +1,5 @@
 # --
-# Copyright (c) 2008-2022 Net-ng.
+# Copyright (c) 2008-2023 Net-ng.
 # All rights reserved.
 #
 # This software is licensed under the BSD License, as described in
@@ -7,7 +7,7 @@
 # this distribution.
 # --
 
-"""Edge Server-side Include renderer
+"""Edge Server-side Include renderer.
 
 https://www.w3.org/TR/esi-lang
 """
@@ -17,8 +17,7 @@ from nagare.renderers.xml import TagProp
 
 
 class Renderer(xml.XmlRenderer):
-    """ The ESI renderer
-    """
+    """The ESI renderer."""
 
     namespace = 'http://www.edge-delivery.org/esi/1.0'
 
@@ -44,7 +43,7 @@ class Renderer(xml.XmlRenderer):
         self.default_namespace = 'esi'
 
     def esi(self, text):
-        """Generate a ``esi`` comment element
+        """Generate a ``esi`` comment element.
 
         In:
           - ``text`` -- comment text
