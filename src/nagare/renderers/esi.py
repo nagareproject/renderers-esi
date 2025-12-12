@@ -1,5 +1,5 @@
 # --
-# Copyright (c) 2008-2024 Net-ng.
+# Copyright (c) 2014-2025 Net-ng.
 # All rights reserved.
 #
 # This software is licensed under the BSD License, as described in
@@ -37,7 +37,7 @@ class Renderer(xml.XmlRenderer):
     vars = TagProp('vars')
 
     def __init__(self, parent=None, *args, **kw):
-        super(Renderer, self).__init__(parent, *args, **kw)
+        super().__init__(parent, *args, **kw)
 
         self.namespaces = {'esi': self.namespace}
         self.default_namespace = 'esi'
@@ -51,4 +51,4 @@ class Renderer(xml.XmlRenderer):
         Return:
           - the comment element
         """
-        return super(Renderer, self).comment('esi ' + text)
+        return super().comment('esi ' + text)
